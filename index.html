@@ -14,6 +14,32 @@
       font-family: Arial, sans-serif;
       scroll-behavior: smooth;
     }
+
+    /* Top header bar */
+    .topbar {
+      background: #2d2d2d;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar h1 {
+      font-size: 1.5rem;
+    }
+    .topbar .bubbles {
+      display: flex;
+      gap: 15px;
+    }
+    .topbar .bubbles a {
+      background: #f5a623;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
     header {
       position: relative;
       height: 100vh;
@@ -89,6 +115,15 @@
   </style>
 </head>
 <body>
+
+  <div class="topbar">
+    <h1>I.B.S Enterprises</h1>
+    <div class="bubbles">
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+
   <header>
     <div class="slideshow">
       <img src="images/slide1.jpg" class="active" alt="Detergent 1">
@@ -120,14 +155,16 @@
     </div>
   </section>
 
+  <!-- Placeholder for future sections -->
+  <section id="about"></section>
+  <section id="contact"></section>
+
   <script>
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slideshow img');
 
     function showSlides() {
-      slides.forEach((slide, index) => {
-        slide.classList.remove('active');
-      });
+      slides.forEach((slide) => slide.classList.remove('active'));
       slideIndex = (slideIndex + 1) % slides.length;
       slides[slideIndex].classList.add('active');
     }
